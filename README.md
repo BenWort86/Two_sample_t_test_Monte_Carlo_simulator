@@ -62,22 +62,34 @@ packages I have given above.
 
 ## Help
 
-Any advise for common problems or issues.
+The function ```group_parameter_server``` interrupts the simulation when you alter the distribution type. 
+If you change the distribution type, you can stop the simulation without stopping. 
+However, you have to make sure that all parameters are within acceptable limits before you run the simulation. 
+When the distribution type is changed, the simulation will be interrupted and the parameter input controls will 
+also be updated with the given values in order to avoid any kind of incorrect calculations. It takes some time 
+to update. I used the ```debounce``` function to solve issue and picked 150ms (tested with an AMD Ryzen 7 3700X). 
+Although it's not an ideal answer but I haven't found a better one yet. If the simulator produces NaN'S after 
+changing the distribution type you can change the interrupt time in the code directly :
+
 ```
-command to run if program contains helper info
+group_parameter_server <- function(input, output, session) {
+  
+  ...
+  
+  # Interrupt the simulation 
+  updateTrigger <- debounce(reactive({
+    req(input$distributiontype) 
+  }), 150)
+ 
+  ...
+ 
+  return(update_in_progress)
+  
+}
+
 ```
 
-## Authors
 
-Contributors names and contact info
-
-ex. Dominique Pizzie  
-ex. [@DomPizzie](https://twitter.com/dompizzie)
-
-## Version History
-
-* 0.1
-    * Initial Release
 
 ## License
 
