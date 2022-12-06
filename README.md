@@ -88,12 +88,8 @@ group_parameter_server <- function(input, output, session) {
 }
 
 ```
-
-
+However, I am considering a solution with a simple startand stop button to avoid this kind of issues.
 
 ## License
 
 This project is licensed under the MIT License - see the LICENSE.md file for details
-
-## Acknowledgments
-
