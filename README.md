@@ -55,18 +55,10 @@ Besides the operating system I used the following programs and additional packag
    - [shinyjs (2.1.0)](https://cran.r-project.org/web/packages/shinyjs/index.html)
    - [shinyWidgets (0.7.5)](https://cran.r-project.org/web/packages/shinyWidgets/index.html)
 
-### Installing
+### Installing & Executing 
 
-1. Install R
-2. Install RStudio
-
-### Executing program
-
-* How to run the program
-* Step-by-step bullets
-```
-code blocks for commands
-```
+Just download the R file and run it in a shiny R environment. Nothing more is needed except the programs and 
+packages I have given above.
 
 ## Help
 
