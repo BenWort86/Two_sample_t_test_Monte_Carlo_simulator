@@ -57,8 +57,8 @@ Besides the operating system I used the following programs and additional packag
 
 ### Installing
 
-Just download the R file and run it in a shiny R environment. Nothing more is needed except the programs and 
-packages I have given above.
+1. Install R
+2. Install RStudio
 
 ### Executing program
 
