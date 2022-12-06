@@ -1,25 +1,27 @@
 
 
-# install and load the required packages ----------------------------------
+# install the required packages -------------------------------------------
 
-# install.packages("matrixTests")
- library(matrixTests)
-# 
-# install.packages("shiny")
- library("shiny")
-# 
-# install.packages("shinydashboard")
- library("shinydashboard")
-# 
-# install.packages("shinyFeedback")
- library("shinyFeedback")
-# 
-# install.packages("shinyjs")
- library("shinyjs")
-# 
-# install.packages("shinyWidgets")
- library("shinyWidgets")
+if (!require('matrixTests')) 
+  install.packages('matrixTests')
 
+if (!require('shiny'))     
+  install.packages('shiny')
+
+if (!require('shinydashboard')) 
+  install.packages('shinydashboard')
+
+if (!require('shinyFeedback')) 
+  install.packages('shinyFeedback')
+
+if (!require('shinyjs')) 
+  install.packages('shinyjs')
+
+if (!require('shinyWidgets')) 
+  install.packages('shinyWidgets')
+
+
+#devtools::install_github('rstudio/leaflet')
 
 # global.ui ---------------------------------------------------------------
 
@@ -130,7 +132,7 @@ plot_dist_ui <- function(id) {
   
   # Function to display the density plot and the slider input where 
   # the slider changes the range of the x-axis 
-
+  
   ns <- NS(id)
   
   tagList(
@@ -150,11 +152,11 @@ plot_dist_ui <- function(id) {
 
 group_parameter_server <- function(input, output, session) {
   
-  # Update the slider input controls and interrupt the simulation in the mean 
-  # time as well
+  # Update the slider input controls and in the meantime pause the simulation 
+  # as well
   #
   # Returns:
-  #   Boolean representing the "Update in progress"- flag
+  #   Logical value representing the "Update in progress"- flag
   
   # Initialize the "Update in progress"- flag 
   update_in_progress <- reactiveVal(FALSE)
@@ -166,9 +168,9 @@ group_parameter_server <- function(input, output, session) {
     # Set the "Update in progress"- flag to TRUE
     update_in_progress(TRUE)
     
-    # Enable the slider input control for the standard derivation
-    # Some distribution types haven't got a standard deviation, so the 
-    # Slider input control will be deactivated for them
+    # Activate the slider input control for the standard derivative
+    # Some distribution types have no standard deviation, so the
+    # slider input control is disabled for them
     enable("std_dev")  
     
     # Create empty lists
@@ -295,20 +297,20 @@ group_parameter_server <- function(input, output, session) {
 
 r_dist <- function(exp_val, std_dev, smpl_size, dist_type) {
   
-  # Take random observations that follows the chosen distribution 
+  # Take random observations that follow the chosen distribution                          
   # 
   # Args:
-  #   exp_val:   Numeric vector representing the mean
+  #   exp_val:   Numerical value representing the mean                                      
   #
-  #   std_dev:   Numeric vector representing the standard deviation
+  #   std_dev:   Numerical value representing the standard deviation                        
   #
-  #   smpl_size: Numeric vector representing the sample size
+  #   smpl_size: Numerical value representing the sample size                               
   #
-  #   dist_type: Character representing the distribution type where the 
-  #              random observations taken from 
+  #   dist_type: Character value indicating the type of distribution 
+  #              from which the random observations are taken 
   # 
   # Returns:
-  #   Numeric vector representing the sample from the chosen distribution
+  #   Numerical vector representing the sample from the selected distribution                 
   
   switch (
     dist_type,
@@ -354,19 +356,18 @@ d_dist <- function(exp_val, std_dev, x_range, dist_type) {
   # Calculate the density for the density plot
   # 
   # Args:
-  #   exp_val:   Numeric vector representing the mean
+  #   exp_val:   Numerical value representing the mean                                      
   #
-  #   std_dev:   Numeric vector representing the standard deviation
+  #   std_dev:   Numerical value representing the standard deviation                    
   #
-  #   x_range:   Numeric vector representing the range of the x-axis of the 
+  #   x_range:   Numeric value representing the range of the x-axis of the          
   #              displayed distribution
   #
-  #   dist_type: Character representing the distribution type which should 
-  #              be displayed
+  #   dist_type: Character value for the distribution type to be displayed
   # 
   #
   # Returns:
-  #   Data frame representing the data of the density
+  #   Data frame representing the density data
   
   switch (
     dist_type,
@@ -416,18 +417,18 @@ d_dist <- function(exp_val, std_dev, x_range, dist_type) {
 
 plot_dist_server <- function(input, output, session, data_input, update) {
   
-  # Plot the density of the chosen distribution
+  # Plot the density of the selected distribution                                           
   # 
   # Args:
-  #   data_input: List representing the parameter of a group: 
+  #   data_input: List representing the parameter of a group:                              
   #                 exp_val, 
   #                 std_dev, 
   #                 sample_size, 
   #                 distribution type
   #               
-  #   update:     Boolean representing the update flag to check
-  #               if an update is in progress which caused by changing 
-  #               the distributions type
+  #   update:     Logical value specifying the update flag to check 
+  #               if an update is in progress caused by a change
+  #               in the distribution type
   
   # Get the density data
   data_dist <- reactive({
@@ -484,16 +485,18 @@ run_monte_carlo_simulation <-
     #
     #   test_sim_param: List representing the test parameter: 
     #
-    #                     relationship: Character representing the
+    #                     relationship: Character value representing the
     #                                   alternative hypothesis, 
     #
-    #                     same_var: Character representing the
-    #                               , 
+    #                     same_var: Character value indicating whether to 
+    #                               treat the two variances as being equal,
+    #                 
+    #                     alpha: Numerical value representing the confidence                                
+    #                            level of the interval, 
     #
-    #                     alpha: Numeric representing the confidence level 
-    #                            of the interval, 
+    #                     sim_steps: Numerical value representing the simulation 
+    #                                steps,
     #
-    #                     sim_steps: Numeric representing the simulation steps,
     #                     seed (Numeric)
     #
     # Returns:
@@ -600,7 +603,7 @@ test_sim_validate_input_server <- function(input, output, session) {
   # Function for checking incorrect entries
   # 
   # Returns:
-  #   Boolean representing the "input error"- flag
+  #   Logical value representing the "input error"- flag                                             
   
   # Set the "input error"- flag to FALSE
   input_error <- reactiveVal(FALSE)
@@ -824,8 +827,8 @@ server <- function(input, output, session) {
   
   monte_carlo_sim_result <- reactive({
     
-    # Stop the simulation if an update is running or an error has occurred
-    # and save the the last result in the mean time 
+    # Stop the simulation if an update is in progress or an error has occurred
+    # and in the meantime save the last result
     req(!update_in_progress_group_A(),
         !update_in_progress_group_B(), 
         !input_error(),
