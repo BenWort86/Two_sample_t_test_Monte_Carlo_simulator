@@ -279,7 +279,7 @@ group_parameter_server <- function(input, output, session) {
     )
   }, ignoreInit = TRUE)
   
-  # Interrupt the simulation for 150ms
+  # Interrupt the simulation 
   updateTrigger <- debounce(reactive({
     req(input$distributiontype) 
   }), 150)
