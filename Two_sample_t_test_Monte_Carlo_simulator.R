@@ -21,8 +21,6 @@ if (!require('shinyWidgets'))
   install.packages('shinyWidgets')
 
 
-#devtools::install_github('rstudio/leaflet')
-
 # global.ui ---------------------------------------------------------------
 
 group_parameter_ui <- function(id) {
