@@ -62,14 +62,14 @@ packages I have given above.
 
 ## Help
 
-The function ```group_parameter_server``` interrupts the simulation when you alter the distribution type. 
-If you change the distribution type, you can stop the simulation without stopping. 
-However, you have to make sure that all parameters are within acceptable limits before you run the simulation. 
-When the distribution type is changed, the simulation will be interrupted and the parameter input controls will 
-also be updated with the given values in order to avoid any kind of incorrect calculations. It takes some time 
-to update. I used the ```debounce``` function to solve issue and picked 150ms (tested with an AMD Ryzen 7 3700X). 
-Although it's not an ideal answer but I haven't found a better one yet. If the simulator produces NaN'S after 
-changing the distribution type you can change the interrupt time in the code directly :
+The function '''group_parameter_server''' interrupts the simulation if you change the distribution type 
+If you change the distribution type, you can stop the simulation without interruption 
+However, you must make sure that all parameters are within acceptable limits before running the simulation 
+When the distribution type is changed, the simulation is interrupted and the parameter input controls are also
+updated with the given values to avoid any kind of erroneous calculations. The update takes some time. 
+I used the '''debounce''' function to solve the problem and chose 150ms (tested with an AMD Ryzen 7 3700X) 
+Eventhough this is not ideal, but I haven't found a better solution thus far. If the simulator generates NaN'S after
+you have changed the distribution type, you can change the interruption time directly in the code:
 
 ```
 group_parameter_server <- function(input, output, session) {
@@ -88,7 +88,7 @@ group_parameter_server <- function(input, output, session) {
 }
 
 ```
-However, I am considering a solution with a simple start and stop button to avoid this kind of issues.
+However, I am considering a solution with a simple start and stop button to avoid this kind of issue.
 
 ## License
 
