@@ -43,8 +43,8 @@ It should run on both Windows 10 and Linux (tested on Manjaro, MInt and MX Linux
 Besides the operating system I used the following programs and additional packages:                                                     
 
 * Programs
-   - [RStudio (2022.07.2 Build 576)](https://posit.co/download/rstudio-desktop/)
-   - [R (Version 3.3.0+)](https://posit.co/download/rstudio-desktop/)
+   - [RStudio (2024.12.1 Build 563)](https://posit.co/download/rstudio-desktop/)
+   - [R (4.3.3)](https://posit.co/download/rstudio-desktop/)
 
 * Packages
    - [matrixTests (0.1.9.1)](https://cran.r-project.org/web/packages/matrixTests/index.html)
