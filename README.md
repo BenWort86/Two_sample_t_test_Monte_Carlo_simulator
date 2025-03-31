@@ -6,8 +6,7 @@ simulation with two sample t-tests (unpaired) via a simple graphical interface.
 ## Description
 
 <p float="left">
-   <img src="images/Overview_Monte_Carlo_simulator_1.png" width= "400" >
-   <img src="images/Overview_Monte_Carlo_simulator_2.png" width= "400" >
+   <img src="images/Overview_Monte_Carlo_Simulatorpng" width= "400" >
 </p>
 
 This app allows you to run the Monte Carlo simulation for the two sample 
@@ -28,19 +27,19 @@ t-test and of course the simulation parameters like simulation steps and seed.
 The simulation result is displayed as a simple histogram. If
 you want to learn more about Monte Carlo simulation, 
 [see here](https://tjmurphy.github.io/jabstb/ttestmc.html).
-It is also possible to save your results. Just click on the 
-menu in the upper right corner (three white lines). You can then save 
+It is also possible to save your results. Just click on the corresponding button 
+in the menu on the left hand side. You can then save 
 the following:
 
 * Saving the simulation data (TSV)
-* Saving the plot (PNG) (only the histogram!)
+* Saving the plot (Can be downloaded directly from the Plotly Interface)
 * Saving the parameter you used for each group and simulation (TSV)
 
 ## Getting Started
 
 ### Dependencies
 
-It should run on both Windows 10 and Linux (only tested on Manjaro). You will need at least an R environment.                               
+It should run on both Windows 10 and Linux (tested on Manjaro, MInt and MX Linux). You will need at least an R environment.                               
 Besides the operating system I used the following programs and additional packages:                                                     
 
 * Programs
@@ -49,11 +48,11 @@ Besides the operating system I used the following programs and additional packag
 
 * Packages
    - [matrixTests (0.1.9.1)](https://cran.r-project.org/web/packages/matrixTests/index.html)
-   - [shiny (1.7.3)](https://cran.r-project.org/web/packages/shiny/index.html)
-   - [shinydashboard (0.7.2)](https://cran.r-project.org/web/packages/shinydashboard/index.html)
    - [shinyfeedback (0.4.0)](https://cran.rstudio.com/web/packages/shinyFeedback/index.html)
    - [shinyjs (2.1.0)](https://cran.r-project.org/web/packages/shinyjs/index.html)
    - [shinyWidgets (0.7.5)](https://cran.r-project.org/web/packages/shinyWidgets/index.html)
+   - [bslib (0.9.0)] (https://cran.r-project.org/web/packages/bslib/index.html)
+   - [plotly (4.10.4)] (https://cran.r-project.org/web/packages/plotly/index.html)
 
 ### Installing & Executing 
 
