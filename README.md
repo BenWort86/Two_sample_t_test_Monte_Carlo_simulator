@@ -51,8 +51,8 @@ Besides the operating system I used the following programs and additional packag
    - [shinyfeedback (0.4.0)](https://cran.rstudio.com/web/packages/shinyFeedback/index.html)
    - [shinyjs (2.1.0)](https://cran.r-project.org/web/packages/shinyjs/index.html)
    - [shinyWidgets (0.7.5)](https://cran.r-project.org/web/packages/shinyWidgets/index.html)
-   - [bslib (0.9.0)] (https://cran.r-project.org/web/packages/bslib/index.html)
-   - [plotly (4.10.4)] (https://cran.r-project.org/web/packages/plotly/index.html)
+   - [bslib (0.9.0)](https://cran.r-project.org/web/packages/bslib/index.html)
+   - [plotly (4.10.4)](https://cran.r-project.org/web/packages/plotly/index.html)
 
 ### Installing & Executing 
 
