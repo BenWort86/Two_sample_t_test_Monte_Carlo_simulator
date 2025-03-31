@@ -6,7 +6,7 @@ simulation with two sample t-tests (unpaired) via a simple graphical interface.
 ## Description
 
 <p float="left">
-   <img src="images/Overview_Monte_Carlo_Simulatorpng" width= "400" >
+   <img src="images/Overview_Monte_Carlo_Simulator.png" width= "400" >
 </p>
 
 This app allows you to run the Monte Carlo simulation for the two sample 
