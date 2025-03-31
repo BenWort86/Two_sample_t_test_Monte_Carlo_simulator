@@ -47,7 +47,7 @@ Besides the operating system I used the following programs and additional packag
    - [R (4.3.3)](https://posit.co/download/rstudio-desktop/)
 
 * Packages
-   - [matrixTests (0.1.9.1)](https://cran.r-project.org/web/packages/matrixTests/index.html)
+   - [matrixTests (0.2.3)](https://cran.r-project.org/web/packages/matrixTests/index.html)
    - [shinyfeedback (0.4.0)](https://cran.rstudio.com/web/packages/shinyFeedback/index.html)
    - [shinyjs (2.1.0)](https://cran.r-project.org/web/packages/shinyjs/index.html)
    - [shinyWidgets (0.7.5)](https://cran.r-project.org/web/packages/shinyWidgets/index.html)
